@@ -40,6 +40,9 @@ const Sidebar = () => {
       onClick={onClick}
       style={{
         width: "auto",
+        overflow: 'auto',
+        height: '100vh',
+        position: 'fixed',
       }}
       defaultSelectedKeys={['1']}
       defaultOpenKeys={['sub1']}

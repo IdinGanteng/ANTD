@@ -6,6 +6,8 @@ import Sidebar from './components/Sidebar';
 import Navbar from './components/Navbar';
 import Tabel from './pages/Tabel';
 import Dashboard from './pages/Dashboard';
+import Bridkrum from './components/bridkrum';
+import Formulir from './pages/Formulir';
 
 const {Header, Footer, Sider}= Layout
 
@@ -16,17 +18,30 @@ const App = () => {
         <Sider style={{background:"white"}}><Sidebar/></Sider>
         <Layout>
             <Header><Navbar/></Header>
+            <div style={{background:"white",paddingLeft:"1cm"}}>
+            <br/>
+            <Bridkrum/>
+            <br/>
             <Router>
               <Routes>
-                <Route path='/' element={<Tabel/>}/>
-                <Route path='/dashboard' element={<Dashboard/>}/>
+                <Route path='/' element={<Dashboard/>}/>
+                <Route path='/table' element={<Tabel/>}/>
+                <Route path='/formulir' element={<Formulir/>}/>
               </Routes>
             </Router>
-            <Footer>Footer</Footer>
+
+            </div>
+            <Footer
+              style={{
+                textAlign: 'center',
+                background:"white"
+              }}
+            > Ant Design ©2022 Created by Idin Ganteng
+            </Footer>
         </Layout>
      </Layout>
     </div>
   )
 }
 
-export default App
+export default App;

@@ -1,9 +1,10 @@
 import { Menu } from 'antd';
 import { MailOutlined, AppstoreOutlined, SettingOutlined } from '@ant-design/icons';
 const style={
-    width:"308mm",
-    marginLeft:"-50px"
-    
+    marginLeft:"-50px",
+    position: 'fixed',
+    zIndex: 1,
+    width: '100%',
 }
 const Navbar = () => (
   <Menu mode="horizontal"  style={style} defaultSelectedKeys={['mail']}>
