@@ -7,7 +7,7 @@ import Navbar from './components/Navbar';
 import Tabel from './pages/Tabel';
 import Dashboard from './pages/Dashboard';
 import Bridkrum from './components/bridkrum';
-import Formulir from './pages/Formulir';
+import { Registration } from './pages/Registration';
 
 const {Header, Footer, Sider}= Layout
 
@@ -26,7 +26,7 @@ const App = () => {
               <Routes>
                 <Route path='/' element={<Dashboard/>}/>
                 <Route path='/table' element={<Tabel/>}/>
-                <Route path='/formulir' element={<Formulir/>}/>
+                <Route path='/formulir' element={<Registration/>}/>
               </Routes>
             </Router>
 

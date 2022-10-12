@@ -10,6 +10,9 @@ const Bridkrum = () => (
     <Breadcrumb.Item>
       <a href="/table">Table</a>
     </Breadcrumb.Item>
+    <Breadcrumb.Item>
+      <a href="/formulir">formulir</a>
+    </Breadcrumb.Item>
     <Breadcrumb.Item>An Application</Breadcrumb.Item>
   </Breadcrumb>
 );

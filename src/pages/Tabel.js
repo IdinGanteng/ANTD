@@ -1,10 +1,11 @@
 import { Divider, Radio, Table } from 'antd';
 import React, { useState } from 'react';
+import { userRegistration } from '../service';
 const columns = [
   {
     title: 'Name',
     dataIndex: 'name',
-    render: (text) => <a>{text}</a>,
+    // render: (text) => <a>{text}</a>,
   },
   {
     title: 'Age',
@@ -15,6 +16,8 @@ const columns = [
     dataIndex: 'address',
   },
 ];
+const rawUser = localStorage.getItem(userRegistration)
+const user = rawUser.replace(/^"(.+(?="$))"$/, '$1')
 const data = [
   {
     key: '1',
