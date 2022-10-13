@@ -43,6 +43,7 @@ export const Registration = () => {
   const [userCredentials,setUserCredentials]=useState({userName:"",email:"",password:""});
   const [loadings,setLoadings]=useState([]);
   // console.log(userCredentials);
+  localStorage.setItem("user",JSON.stringify(userCredentials))
   const enterLoading = (index) => {
     setLoadings((prevLoadings) => {
       const newLoadings = [...prevLoadings];
