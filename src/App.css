@@ -1,39 +1,57 @@
-@import 'antd/dist/antd.css';
-.App {
-  text-align: center;
+.navbar{
+  background-color: #16ABF8;
+  position: static;
+  width: 100%;
+  height: 100px;
+  flex-shrink: 0;
+  /* margin-top: -28px; */
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.logo{
+  padding-left: 100%;
+  margin-bottom: 10px;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.btn-tambah{
+  background-color: #16ABF8; /* Green */
+  border: none;
   color: white;
+  width: 150px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  cursor: pointer;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+  border-radius: 35px;
+  display: grid;
+  grid-template-columns: auto auto ;
+  margin-left: 40%;
+}
+.btn-tambah svg{
+  padding-top: 15px;
+  padding-left: 10px;
+  width: 30px;
+  height: auto;
+}
+.btn-tambah p{
+  padding-top: 15px;
+  padding-right: 20px;
+}
+.btn-tambah:hover{
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+@media screen and (max-width: 768px){
+  .logo{
+    padding-left: 40px;
+  }
+}
+.card-activity {
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  width: 40%;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.card-activity:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
 }
