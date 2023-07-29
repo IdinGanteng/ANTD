@@ -5,12 +5,14 @@ import Dashboard from './Pages/Dashboard';
 
 function App() {
   return (
+    <>
+   <Navbar />
     <Router>
-      <Navbar />
       <Routes>
         <Route path='/' element={<Dashboard/>}/>
       </Routes>
     </Router>
+    </>
   );
 }
 
