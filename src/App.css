@@ -81,3 +81,8 @@
   cursor: pointer;
   margin-bottom: 10px;
 }
+
+.link-card{
+  text-decoration: none;
+  color: black;
+}

@@ -7,16 +7,14 @@ import { getActivity, deleteActivity, addActivity } from '../service';
 const Dashboard = () => {
   const [activity, setActivity] = useState([]);
   const [newActivity, setNewActivity] = useState('');
-  const [searchValue, setSearchValue] = useState('');
 
   useEffect(() => {
     fetchActivity();
   }, []);
-  const handleDelete = async (id) => {
+  const handleDeleteCard = async (id) => {
+
     try {
-      // Panggil fungsi deleteActivity untuk menghapus aktivitas berdasarkan ID
       await deleteActivity(id);
-      // Setelah berhasil menghapus, panggil kembali fungsi untuk mengambil data terbaru dari API
       fetchActivity();
     } catch (error) {
       console.error('Error deleting activity:', error);
@@ -26,7 +24,6 @@ const Dashboard = () => {
     try {
       const response = await getActivity();
       setActivity(response.data);
-      console.log(response.data);
     } catch (error) {
       console.error('Error fetching cards:', error);
     }
@@ -34,24 +31,18 @@ const Dashboard = () => {
   const handleAddAct = async () => {
     try {
       const response = await addActivity({
-        title: newActivity, // Gunakan state newActivity sebagai judul baru
+        title: newActivity,
         email: "kanggayus101@gmail.com",
       });
       setActivity([...activity, response.data]);
       setNewActivity('');
-      console.log(response.data);
-      // fetchActivity();
     } catch (error) {
       console.log(error);
     }
   }
-  const filteredActivity = activity.filter((data) =>
-    data.title.toLowerCase().includes(searchValue.toLowerCase())
-  );
   return (
     <>
-    <div className='d-flex justify-content-around mt-3'>
-      
+      <div className='d-flex justify-content-around mt-3'>
         <div>
           <h2>Activity</h2>
         </div>
@@ -64,26 +55,26 @@ const Dashboard = () => {
             <p>Tambah</p>
           </button>
         </div>
-    
-    </div>
+      </div>
       <div className='card-container'>
-          {
-            activity.length === 0 ? (
-              <img src={img} alt='img' className='img-fluid mt-3 d-flex' />
-
-            ) : (
-              activity.map((data) => (
+        {
+          activity.length === 0 ? (
+            <img src={img} alt='img' className='img-fluid mt-3 d-flex' />
+          ) : (
+            activity.map((data) => (
+              <div key={data.id}>
                 <CardActivity
                   key={data.id}
                   title={data.title}
                   date={data.created_at}
-                  onDelete={handleDelete}
+                  onDelete={handleDeleteCard}
                   id={data.id}
                 />
-              ))
-            )
-          }
-        </div>
+              </div>
+            ))
+          )
+        }
+      </div>
     </>
   )
 }

@@ -1,13 +1,18 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const CardActivity = ({ title, date, id, onDelete }) => {
   const formattedDate = new Date(date).toLocaleString();
-  const handleDelete = () => {
+  const navigate = useNavigate();
+  const handleDelete = (e) => {
+    e.stopPropagation();
     onDelete(id);
-    console.log(id);
+  }
+  const handleCardClick=()=>{
+    navigate(`/activity-detail/${id}`);
   }
   return (
-    <div className='card-activity'>
+    <div className='card-activity' onClick={handleCardClick}>
       <h3>{title}</h3>
       <p>{formattedDate}</p>
       <button onClick={handleDelete} className="btn-delete">
