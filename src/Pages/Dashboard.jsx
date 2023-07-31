@@ -68,7 +68,7 @@ const Dashboard = () => {
                   title={data.title}
                   date={data.created_at}
                   onDelete={handleDeleteCard}
-                  id={data.id}
+                  id={data.id}  
                 />
               </div>
             ))

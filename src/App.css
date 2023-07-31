@@ -86,3 +86,15 @@
   text-decoration: none;
   color: black;
 }
+.input-h1 {
+  border: none;
+  background-color: transparent;
+  font-size: 2.5rem;
+  font-weight: bold;
+  outline: none;
+  border-bottom: 1px solid #000; /* Ganti warna sesuai kebutuhan */
+  outline: none; /* Hilangkan outline yang muncul saat focus */
+  padding: 5px 0;
+  transition: 1s ease-in-out;
+  width: 50%;
+}
