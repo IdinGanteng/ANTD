@@ -1,19 +1,26 @@
-import React from 'react'
+import React from 'react';
+import { Modal } from 'react-bootstrap';
+import img from '../Assets/icon-alert.8a9d9385.svg'
 
-const ModalConfirm = ({onClose, onDelete}) => {
+const ModalConfirm = ({ show, onHide, onDelete, id,activityTitle}) => {
+  const handleDelete = ()=>{
+    onDelete(id)
+  }
   return (
-    <div className="modal-container">
-      <div className="modal-content">
-        <h2>Confirmation</h2>
-        <p>Are you sure you want to delete this activity?</p>
-        <div className="modal-buttons">
-          <button onClick={onClose}>Close</button>
-          <button onClick={onDelete} className="btn-delete">
-            Delete
-          </button>
-        </div>
+    <Modal show={show} onHide={onHide} centered>
+    <Modal.Body>
+      <div className='d-flex justify-content-around'>
+        <img src={img} alt="img-alert"/>
       </div>
-    </div>
+      <div className='d-flex justify-content-around text-center'>
+      <p>Apakah anda yakin ingin menghapus activity <h5>"{activityTitle}"</h5></p>
+      </div>
+      <div className='d-flex justify-content-around' >
+      <button onClick={onHide} className='btn-cancel'>Cancel</button>
+      <button onClick={handleDelete} className='btn-delete-modal'>Delete</button>
+      </div>
+    </Modal.Body>
+  </Modal>
   )
 }
 

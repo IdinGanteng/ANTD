@@ -65,7 +65,7 @@ const ActivityDetail = () => {
                             <path d="M11.25 5.91602L14.5833 9.24935" stroke="#C4C4C4" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
                         </svg>
                     </button>
-                    <button onClick={handleCancelEdit}>cancel</button>
+                    <button onClick={handleCancelEdit} className="btn-cancel">cancel</button>
                 </div>
             ) : (
                 <div className='d-flex justify-content-around'>

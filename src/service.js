@@ -38,6 +38,7 @@ export const addActivity = async () => {
 export const deleteActivity = async (id) => {
   try {
     const response = await api.delete(`/activity-groups/${id}`);
+    console.log(response.data);
     return response.data;
   } catch (error) {
     console.log(error.message);

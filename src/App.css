@@ -50,6 +50,7 @@
   cursor: pointer;
   height: 243px;
   padding: 22px 27px;
+  text-align: center;
 }
 
 .card-activity:hover {
@@ -62,7 +63,7 @@
   gap: 10px;
   margin: 10px 15%;
 }
-@media(max-width:768px){
+@media(max-width:500px){
   .card-container{
     justify-content: center;
     flex-direction: column; 
@@ -70,6 +71,37 @@
   }
   .card-activity{
     width: 100%;
+  }
+  .btn-tambah {
+    /* display: flex;
+    align-items: center;
+    justify-content: center; */
+    padding: 4px 9px;
+    position: fixed;
+    bottom: 20px;
+    right: 40%;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: #007bff;
+    color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .btn-tambah p {
+    display: none;
+  }
+  .input-h1{
+    border: none;
+    background-color: transparent;
+    font-size: 10px;
+    font-weight:100;
+    outline: none;
+    border-bottom: 1px solid #000; /* Ganti warna sesuai kebutuhan */
+    outline: none; /* Hilangkan outline yang muncul saat focus */
+    padding: 5px 0;
+    transition: 1s ease-in-out;
+    width: 50%;
   }
 }
 .btn-delete{
@@ -97,4 +129,40 @@
   padding: 5px 0;
   transition: 1s ease-in-out;
   width: 50%;
+}
+.btn-delete-modal{
+  background-color: #da0404; /* Green */
+  border: none;
+  color: white;
+  width: 150px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  cursor: pointer;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+  border-radius: 35px;
+  height: 50px;
+  /* display: grid; */
+  grid-template-columns: auto auto ;
+}
+.btn-delete-modal:hover{
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+.btn-cancel{
+  background-color: #d0eaf7; /* Green */
+  border: none;
+  width: 150px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  cursor: pointer;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+  border-radius: 35px;
+  /* display: grid; */
+  grid-template-columns: auto auto ;
+}
+.btn-cancel:hover{
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
 }
